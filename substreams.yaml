@@ -20,6 +20,7 @@ binaries:
 modules:
   - name: map_safe_multi_sig_transactions
     kind: map
+    initialBlock: 17600084
     inputs:
       - source: sf.ethereum.type.v2.Block
     output:
