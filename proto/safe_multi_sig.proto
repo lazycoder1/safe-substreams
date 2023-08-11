@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package gtms.safe_multi_sig.v1;
+
+message SafeMultiSigTransactions {
+  repeated SafeMultiSigTransaction safe_multi_sig_tx = 1;
+}
+
+message SafeMultiSigTransaction {
+  string transaction_hash = 1;
+  string to = 2;
+  string from = 3;
+  string data = 4;
+  uint64 operation = 5;
+  string safe_tx_gas = 6;
+  string base_gas = 7;
+  string gas_price = 8;
+  string gas_token = 9;
+  string refund_receiver = 10;
+  string signatures = 11;
+  string additional_info = 12;
+  string timestamp = 13;
+} 

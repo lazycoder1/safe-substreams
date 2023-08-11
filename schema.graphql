@@ -1,0 +1,16 @@
+type SafeMultiSigTransaction @entity {
+    id: ID!
+    transaction_hash Bytes
+    to Bytes
+    from Bytes
+    data Bytes
+    operation BigInt
+    safe_tx_gas BigInt
+    base_gas BigInt
+    gas_price BigInt
+    gas_token Bytes
+    refund_receiver Bytes
+    signatures Bytes
+    additional_info Bytes
+    timestamp BigInt
+}

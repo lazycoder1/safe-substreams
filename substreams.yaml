@@ -1,0 +1,31 @@
+specVersion: v0.1.0
+package:
+  name: 'substreams_ethereum_quickstart'
+  version: v1.0.0
+
+protobuf:
+  files:
+    - safe_multi_sig.proto
+  importPaths:
+    - ./proto
+
+binaries:
+  default:
+    type: wasm/rust-v1
+    file: ./target/wasm32-unknown-unknown/release/substreams.wasm
+
+modules:
+  - name: map_safe_multi_sig_transactions
+    kind: map
+    inputs:
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:gtms.safe_multi_sig.v1.SafeMultiSigTransactions
+ 
+  - name: graph_out
+    kind: map
+    initialBlock: 17890084
+    inputs: 
+      - map: map_safe_multi_sig_transactions
+    output:
+      type: proto:sf.substreams.sink.entity.v1.EntityChanges
