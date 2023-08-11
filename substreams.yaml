@@ -3,6 +3,9 @@ package:
   name: 'substreams_ethereum_quickstart'
   version: v1.0.0
 
+imports: # dependencies
+  entity: https://github.com/streamingfast/substreams-entity-change/releases/download/v0.2.1/substreams-entity-change-v0.2.1.spkg
+
 protobuf:
   files:
     - safe_multi_sig.proto
@@ -24,8 +27,8 @@ modules:
  
   - name: graph_out
     kind: map
-    initialBlock: 17890084
+    initialBlock: 17600084
     inputs: 
       - map: map_safe_multi_sig_transactions
     output:
-      type: proto:sf.substreams.sink.entity.v1.EntityChanges
+      type: proto:substreams.entity.v1.EntityChanges # this type can be consumed by Graph Node

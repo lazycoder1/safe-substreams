@@ -19,5 +19,5 @@ message SafeMultiSigTransaction {
   string refund_receiver = 10;
   string signatures = 11;
   string additional_info = 12;
-  string timestamp = 13;
+  uint64 timestamp = 13;
 } 

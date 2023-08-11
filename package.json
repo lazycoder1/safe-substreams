@@ -11,7 +11,8 @@
     "substreams:package": "substreams pack ./substreams.yaml",
     "substreams:prepare": "yarn substreams:protogen && yarn substreams:build && yarn substreams:package",
     "substreams:protogen": "substreams protogen ./substreams.yaml --exclude-paths='sf/substreams,google'",
-    "substreams:stream": "substreams run -e mainnet.eth.streamingfast.io:443 substreams.yaml graph_out -s 12292922 -t +10"
+    "substreams:stream": "substreams run -e mainnet.eth.streamingfast.io:443 substreams.yaml graph_out -s 12292922 -t +10",
+    "substreams:deploy": "graph deploy --studio safe-substream-ethereum"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.54.0"

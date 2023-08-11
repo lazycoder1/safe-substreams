@@ -32,7 +32,7 @@ pub struct SafeMultiSigTransaction {
     pub signatures: ::prost::alloc::string::String,
     #[prost(string, tag="12")]
     pub additional_info: ::prost::alloc::string::String,
-    #[prost(string, tag="13")]
-    pub timestamp: ::prost::alloc::string::String,
+    #[prost(uint64, tag="13")]
+    pub timestamp: u64,
 }
 // @@protoc_insertion_point(module)

@@ -6,7 +6,7 @@ build:
 
 .PHONY: stream
 stream: build
-	substreams run -e $(ENDPOINT) substreams.yaml map_safe_multi_sig_transactions -s 17890084 -t +1000
+	substreams run -e $(ENDPOINT) substreams.yaml map_safe_multi_sig_transactions -s 17600083 -t +10000
 
 .PHONY: stream_gui
 stream_gui: build

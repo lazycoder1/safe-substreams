@@ -1,7 +1,7 @@
 specVersion: 0.0.4
 description: Jiffy Safe Substream (powered by StreamingFast Substreams)
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: substreams
     name: safe_txn_substreams
@@ -9,7 +9,7 @@ dataSources:
     source:
       package:
         moduleName: graph_out
-        file: substreams-ethereum-quickstart-v1.0.0.spkg
+        file: safe_txn_substreams/substreams-ethereum-quickstart-v1.0.0.spkg
     mapping:
       kind: substreams/graph-entities
       apiVersion: 0.0.6
