@@ -1,16 +1,28 @@
 type SafeMultiSigTransaction @entity {
     id: ID!
-    transaction_hash: Bytes
-    to: Bytes
-    from: Bytes
-    data: Bytes
+    transaction_hash: String
+    to: String
+    from: String
+    data: String
     operation: BigInt
     safe_tx_gas: BigInt
     base_gas: BigInt
     gas_price: BigInt
-    gas_token: Bytes
-    refund_receiver: Bytes
-    signatures: Bytes
-    additional_info: Bytes
+    gas_token: String
+    refund_receiver: String
+    signatures: String
+    additional_info: String
     timestamp: BigInt
+}
+
+type LogUseGelato1Balance @entity {
+    id: ID!
+    transaction_hash: String
+    target: String
+    sponsor: String
+    fee_token: String
+    one_balance_chain_id: BigInt
+    native_to_fee_token_x_rate_numerator: BigInt
+    native_to_fee_token_x_rate_denominator: BigInt
+    correlation_id: String
 }

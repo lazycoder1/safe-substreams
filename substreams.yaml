@@ -20,16 +20,25 @@ binaries:
 modules:
   - name: map_safe_multi_sig_transactions
     kind: map
-    initialBlock: 17600084
+    initialBlock: 17600567
     inputs:
       - source: sf.ethereum.type.v2.Block
     output:
       type: proto:gtms.safe_multi_sig.v1.SafeMultiSigTransactions
+
+  - name: map_gelato_relay
+    kind: map 
+    initialBlock: 17600567
+    inputs:
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:gtms.safe_multi_sig.v1.LogUseGelato1Balances
  
   - name: graph_out
     kind: map
-    initialBlock: 17600084
+    initialBlock: 17600567
     inputs: 
       - map: map_safe_multi_sig_transactions
+      - map: map_gelato_relay
     output:
       type: proto:substreams.entity.v1.EntityChanges # this type can be consumed by Graph Node

@@ -6,6 +6,10 @@ message SafeMultiSigTransactions {
   repeated SafeMultiSigTransaction safe_multi_sig_tx = 1;
 }
 
+message LogUseGelato1Balances {
+  repeated LogUseGelato1Balance log_use_gelato_1_balance = 1;
+} 
+
 message SafeMultiSigTransaction {
   string transaction_hash = 1;
   string to = 2;
@@ -20,4 +24,15 @@ message SafeMultiSigTransaction {
   string signatures = 11;
   string additional_info = 12;
   uint64 timestamp = 13;
-} 
+}
+
+message LogUseGelato1Balance {
+  string transaction_hash = 1;
+  string sponsor = 2;
+  string target = 3;
+  string fee_token = 4;
+  string one_balance_chain_id = 5;
+  string native_to_fee_token_x_rate_numerator = 6;
+  string native_to_fee_token_x_rate_denominator = 7;
+  string correlationId = 8;
+}
